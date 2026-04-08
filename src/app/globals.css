@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-1: var(--accent-1);
+  --color-accent-2: var(--accent-2);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Light Mode (UNCHANGED) ─────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #0c0c0c;
+  --accent-1: #0ea5e9;
+  --accent-2: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Dark Mode — Professional Engineer Palette ───────────── */
+/*
+   Design language: deep charcoal/slate, steel-blue primary
+   accent, muted slate secondary. Subtle borders, no neon glow.
+   Inspired by VS Code / Linear / Notion dark.
+*/
+.dark {
+  --background: #0d1117;          /* GitHub-dark charcoal         */
+  --foreground: #e6edf3;          /* Warm white — easy on eyes    */
+  --accent-1: #58a6ff;            /* GitHub-blue — confident, not neon */
+  --accent-2: #8b949e;            /* Slate grey secondary text    */
+  --glass-bg: rgba(22, 27, 34, 0.85);   /* Dark card surface       */
+  --glass-border: rgba(48, 54, 61, 0.9); /* Subtle charcoal border */
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-500;
+  }
+}
+
+/* Glass utility — clean frosted card without neon bleed */
+.glass {
+  @apply backdrop-blur-md bg-glass-bg border border-glass-border;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-2);
+  border-radius: 10px;
+  opacity: 0.6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-1);
+}
+
+/* ─── Hero gradient text animation ─────────────────────────── */
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
