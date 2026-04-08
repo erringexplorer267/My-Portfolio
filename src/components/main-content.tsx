@@ -13,7 +13,7 @@ import { ProjectVault } from "@/components/project-vault";
 import { SocialHub } from "@/components/social-hub";
 import { JourneyTrack } from "@/components/journey-track";
 
-const JOURNEY_TEXT = "I,Uttiyo Modak, architect high-performance digital systems inspired by the precision of hardware. With a background in ECE and a mastery of the Modern Web, I build everything from IoT-integrated applications to AI-powered simulations. Dedicated to creating digital experiences that feel as solid as the silicon they are built up";
+const JOURNEY_TEXT = "As an Electronics & Communication Engineer and Full-Stack Developer, I, Uttiyo Modak, architect high-performance digital systems that bridge the gap between hardware precision and modern web scalability. My work spans from IoT-integrated ecosystems to AI-driven simulations, focusing on building robust, hardware-inspired digital experiences that are as reliable as the silicon they run on.";
 
 interface MainContentProps {
   initialSkills?: any[];
